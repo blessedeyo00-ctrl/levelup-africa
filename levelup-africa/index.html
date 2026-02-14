@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVEL-UP AFRICA FLAGSHIP PROJECT 2026: LATBc </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="navbar">
+    <div class="logo">LEVEL-UP AFRICA</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="conference.html">Conference</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    
+    <div class="hero-text">
+      <h1>LEVEL-UP AFRICA</h1>
+      <h3>FLAGSHIP PROJECT 2026:</h3>
+      <p>
+        LEVEL-UP AFRICA TECH & BUSINESS CONFERENCE 2026 EDITION (LATBC)
+      </p>
+    </div>
+
+  <!-- Hero Background Image -->
+  <div class="hero-image.png">
+    <img src="images/hero-image.png" alt="Hero Image">
+  </div>
+
+  <!-- Africa Map Logo -->
+  <img src="images/africa-map.png" alt="Africa Map Logo" class="africa-map">
+
+  <p>Empowering African students with practical skills, innovation mindset, and industry exposure for the future of work.</p>
+  <p><strong>Date:</strong> 19th February 2026</p>
+
+  <!-- Countdown Timer -->
+  <div id="countdown" class="countdown-container">
+    <div class="countdown-box"><span id="days">00</span><div class="label">Days</div></div>
+    <div class="countdown-box"><span id="hours">00</span><div class="label">Hours</div></div>
+    <div class="countdown-box"><span id="minutes">00</span><div class="label">Minutes</div></div>
+    <div class="countdown-box"><span id="seconds">00</span><div class="label">Seconds</div></div>
+  </div>
+
+  <p><strong>Venue:</strong> Julius Onah Hall, ESUT, Enugu</p>
+  <p><strong>Audience:</strong> Students & Young Professionals</p>
+
+  <div class="hero-buttons">
+    <a href="register.html" class="btn">Register Now</a>
+    <a href="partners.html" class="btn">Become a Partner</a>
+    <a href="community.html" class="btn">Join the Community</a>
+  </div>
+</section>
+
+<!-- ABOUT BRIEF -->
+<section class="section about-brief">
+  <h2>About Level-Up Africa</h2>
+  <p>Level-Up Africa is a youth-driven platform dedicated to preparing students for relevance in today's fast-changing digital economy through technology, entrepreneurship, and leadership development.</p>
+</section>
+
+<!-- CONTACT FORM AS EXAMPLE -->
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>Reach us via email, phone, or fill the form below:</p>
+
+  <form id="contactForm">
+    <div class="success" id="contactSuccess">✅ Your message has been sent successfully!</div>
+
+    <input type="text" name="fullName" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 LEVEL-UP AFRICA. Empowering the next generation of African innovators.</p>
+</footer>
+
+<script>
+  // COUNTDOWN TIMER
+  const eventDate = new Date("Feb 19, 2026 09:00:00").getTime();
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById("days").innerText = days.toString().padStart(2,'0');
+    document.getElementById("hours").innerText = hours.toString().padStart(2,'0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2,'0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2,'0');
+
+    if(distance < 0){
+      clearInterval(countdown);
+      document.getElementById("countdown").innerHTML = "The event has started!";
+    }
+  }, 1000);
+
+  // CONTACT FORM SUBMIT
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactSuccess');
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    contactSuccess.style.display = 'block';
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>

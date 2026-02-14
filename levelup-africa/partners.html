@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners - Level-Up Africa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">LEVEL-UP AFRICA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="conference.html">Conference</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Partners & Sponsors</h2>
+  <p>Partnering with Level-Up Africa gives your brand direct access to the next generation of tech talents, entrepreneurs, and digital consumers.</p>
+
+  <h3>Benefits</h3>
+  <ul>
+    <li>Brand visibility</li>
+    <li>Direct engagement with students</li>
+    <li>Talent pipeline</li>
+    <li>Positive brand positioning</li>
+  </ul>
+
+  <h3>Support Options</h3>
+  <ul>
+    <li>Financial sponsorship</li>
+    <li>Product support</li>
+    <li>Media partnership</li>
+    <li>Mentorship</li>
+  </ul>
+
+  <form id="partnerForm">
+    <div class="success" id="partnerSuccess">✅ Your partnership request has been sent!</div>
+
+    <input type="text" name="company" placeholder="Company / Organization" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Message / Proposal" rows="4" required></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 LEVEL-UP AFRICA. Empowering the next generation of African innovators.</p>
+</footer>
+
+<script>
+const partnerForm = document.getElementById('partnerForm');
+const partnerSuccess = document.getElementById('partnerSuccess');
+partnerForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  partnerSuccess.style.display = 'block';
+  partnerForm.reset();
+});
+</script>
+
+</body>
+</html>
