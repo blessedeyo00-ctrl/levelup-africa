@@ -49,8 +49,27 @@
 <script>
 const registerForm = document.getElementById('registerForm');
 const registerSuccess = document.getElementById('registerSuccess');
+
 registerForm.addEventListener('submit', function(e){
   e.preventDefault();
+
+  const name = registerForm.name.value;
+  const email = registerForm.email.value;
+  const phone = registerForm.phone.value;
+  const school = registerForm.school.value;
+  const interest = registerForm.interest.value;
+
+  const whatsappNumber = "2348112539591";
+
+  const text = `🎟️ *New Conference Registration*%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+School/Profession: ${school}%0A
+Interest: ${interest}`;
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+
   registerSuccess.style.display = 'block';
   registerForm.reset();
 });

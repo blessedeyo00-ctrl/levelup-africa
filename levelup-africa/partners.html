@@ -64,8 +64,25 @@
 <script>
 const partnerForm = document.getElementById('partnerForm');
 const partnerSuccess = document.getElementById('partnerSuccess');
+
 partnerForm.addEventListener('submit', function(e){
   e.preventDefault();
+
+  const company = partnerForm.company.value;
+  const email = partnerForm.email.value;
+  const phone = partnerForm.phone.value;
+  const message = partnerForm.message.value;
+
+  const whatsappNumber = "2348112539591";
+
+  const text = `🤝 *New Partnership Request*%0A
+Company: ${company}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+Message: ${message}`;
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+
   partnerSuccess.style.display = 'block';
   partnerForm.reset();
 });
